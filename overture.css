@@ -1,0 +1,33 @@
+:root {
+  --major-second: 1.125;
+  --minor-third: 1.2;
+  --major-third: 1.25;
+  --perfect-fourth: 1.333;
+  --augmented-fourth: 1.414;
+  --perfect-fifth: 1.5;
+  --golden-ratio: 1.618;
+  --major-sixth: 1.667;
+
+  /* Set your base size for the scale in em, rem or px */
+  --base: 1em;
+  /* Choose a scale ratio from the list above */
+  --scale: var(--major-third);
+
+  /* Font size variables*/
+  --font-size-7: calc(var(--font-size-6) / var(--scale));
+  --font-size-6: calc(var(--base) / var(--scale));
+  --font-size-5: var(--base);
+  --font-size-4: calc(var(--base) * var(--scale));
+  --font-size-3: calc(var(--font-size-4) * var(--scale));
+  --font-size-2: calc(var(--font-size-3) * var(--scale));
+  --font-size-1: calc(var(--font-size-2) * var(--scale));
+}
+
+/* Example utility classes for setting font-size */
+.f7 { font-size: var(--font-size-7); }
+.f6 { font-size: var(--font-size-6); }
+.f5 { font-size: var(--font-size-5); }
+.f4 { font-size: var(--font-size-4); }
+.f3 { font-size: var(--font-size-3); }
+.f2 { font-size: var(--font-size-2); }
+.f1 { font-size: var(--font-size-1); }
