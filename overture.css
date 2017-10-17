@@ -1,8 +1,7 @@
+/* overture.css | https://github.com/lol-russo/overture */
 :root {
-  /* Set your base size for the scale in (em, rem, px or percent) */
-  --base: 1em;
-  /* Choose a scale ratio from the list below */
-  --ratio: var(--perfect-fourth);
+  --scale-base: 1em;
+  --scale-ratio: var(--perfect-fourth);
 
   /* Ratios */
   --minor-second: 1.067;
@@ -19,14 +18,21 @@
   --major-seventh: 1.875;
   --octave: 2;
 
-  /* Now we can calculate measurements dynamically using our chosen scale.
-  These variables will update when we change our --base or --ratio. */
-  --scale-m1: calc(var(--base) / var(--ratio));
-  --scale-base: var(--base);
-  --scale-p1: calc(var(--base) * var(--ratio));
-  --scale-p2: calc(var(--scale-p1) * var(--ratio));
-  --scale-p3: calc(var(--scale-p2) * var(--ratio));
-  --scale-p4: calc(var(--scale-p3) * var(--ratio));
+  /* - Negative values */
+  --scale-m1: calc(var(--scale-base) / var(--scale-ratio));
+  --scale-m2: calc(var(--scale-m1) / var(--scale-ratio));
+  --scale-m3: calc(var(--scale-m2) / var(--scale-ratio));
+  --scale-m4: calc(var(--scale-m3) / var(--scale-ratio));
+  --scale-m5: calc(var(--scale-m4) / var(--scale-ratio));
+  --scale-m6: calc(var(--scale-m5) / var(--scale-ratio));
+
+  /* + Positive values */
+  --scale-p1: calc(var(--scale-base) * var(--scale-ratio));
+  --scale-p2: calc(var(--scale-p1) * var(--scale-ratio));
+  --scale-p3: calc(var(--scale-p2) * var(--scale-ratio));
+  --scale-p4: calc(var(--scale-p3) * var(--scale-ratio));
+  --scale-p5: calc(var(--scale-p4) * var(--scale-ratio));
+  --scale-p6: calc(var(--scale-p5) * var(--scale-ratio));
 }
 
 /* Example font-size utility classes using our measurement variables */
